@@ -43,6 +43,7 @@ class PlayerFragment : Fragment() {
 
     private var player: MediaPlayer? = null
     private var isPreparing = false     // FIX: blocca doppio start
+    private var currentlyPlayingPath: String? = null
     private var isLoop = false
     private var isShuffle = false
     private val handler = Handler(Looper.getMainLooper())
