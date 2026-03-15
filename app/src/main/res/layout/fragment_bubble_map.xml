@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="6dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mappa mood"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/text"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBubbleToList"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:text="☰"
+            android:textSize="16sp"
+            app:backgroundTint="#282828"
+            android:textColor="@color/subtext"
+            app:cornerRadius="18dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+    </LinearLayout>
+
+    <!-- Mood filter chips -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="4dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipsMood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"/>
+    </HorizontalScrollView>
+
+    <!-- Info line -->
+    <TextView
+        android:id="@+id/tvBubbleInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="4dp"
+        android:textSize="11sp"
+        android:textColor="@color/subtext"
+        android:text=""/>
+
+    <!-- Canvas area -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.musicmood.BubbleMapView
+            android:id="@+id/bubbleMapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/tvBubbleEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Analizza la libreria per vedere la mappa mood
+
+Vai in Libreria → Scansiona"
+            android:textColor="@color/subtext"
+            android:textSize="14sp"
+            android:lineSpacingExtra="8dp"
+            android:visibility="visible"/>
+    </FrameLayout>
+
+</LinearLayout>

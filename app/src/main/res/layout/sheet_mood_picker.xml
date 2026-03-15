@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#282828"
+    android:paddingBottom="24dp">
+
+    <!-- Handle -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="#535353"/>
+
+    <TextView
+        android:id="@+id/tvPickerTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cambia mood"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tvPickerSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#B3B3B3"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+    <!-- 4 mood rows -->
+    <LinearLayout
+        android:id="@+id/rowEnergicoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="20dp"
+        android:background="@drawable/mood_row_ripple"
+        android:clickable="true"
+        android:focusable="true">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="36dp"
+            android:background="#F59E0B"
+            android:layout_marginEnd="16dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Energico" android:textSize="15sp" android:textStyle="bold"
+                android:textColor="#F59E0B"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Ritmo veloce, suono brillante" android:textSize="11sp"
+                android:textColor="#B3B3B3" android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/checkEnergicoBtn"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="" android:textSize="18sp" android:textColor="#F59E0B"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rowPositivoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="20dp"
+        android:background="@drawable/mood_row_ripple"
+        android:clickable="true"
+        android:focusable="true">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="36dp"
+            android:background="#1DB954"
+            android:layout_marginEnd="16dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Positivo" android:textSize="15sp" android:textStyle="bold"
+                android:textColor="#1DB954"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Allegro, melodico, upbeat" android:textSize="11sp"
+                android:textColor="#B3B3B3" android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/checkPositivoBtn"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="" android:textSize="18sp" android:textColor="#1DB954"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rowAggressivoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="20dp"
+        android:background="@drawable/mood_row_ripple"
+        android:clickable="true"
+        android:focusable="true">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="36dp"
+            android:background="#EF4444"
+            android:layout_marginEnd="16dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Aggressivo" android:textSize="15sp" android:textStyle="bold"
+                android:textColor="#EF4444"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Intenso, distorto, potente" android:textSize="11sp"
+                android:textColor="#B3B3B3" android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/checkAggressivoBtn"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="" android:textSize="18sp" android:textColor="#EF4444"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rowMalinconatoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="20dp"
+        android:background="@drawable/mood_row_ripple"
+        android:clickable="true"
+        android:focusable="true">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="36dp"
+            android:background="#7C3AED"
+            android:layout_marginEnd="16dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Malinconico" android:textSize="15sp" android:textStyle="bold"
+                android:textColor="#7C3AED"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Lento, scuro, riflessivo" android:textSize="11sp"
+                android:textColor="#B3B3B3" android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/checkMalinconatoBtn"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="" android:textSize="18sp" android:textColor="#7C3AED"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <!-- Reset to algorithm result -->
+    <LinearLayout
+        android:id="@+id/rowResetContainer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="36dp"
+        android:paddingEnd="20dp"
+        android:background="@drawable/mood_row_ripple"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="8dp">
+
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="↩  Ripristina rilevamento automatico"
+            android:textSize="13sp" android:textColor="#B3B3B3"/>
+    </LinearLayout>
+
+</LinearLayout>

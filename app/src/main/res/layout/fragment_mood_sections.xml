@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/moodSectionsRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+
+    <!-- Toolbar con titolo e toggle vista -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Per mood"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/text"/>
+
+        <!-- Toggle: torna alla lista -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToggleToList"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:text="☰"
+            android:textSize="16sp"
+            app:backgroundTint="#282828"
+            android:textColor="@color/subtext"
+            app:cornerRadius="18dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+    </LinearLayout>
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/tvSectionsEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Analizza la libreria per vedere
+i brani divisi per mood"
+        android:textColor="@color/subtext"
+        android:textSize="14sp"
+        android:lineSpacingExtra="6dp"
+        android:visibility="gone"/>
+
+    <!-- Sezioni scrollabili -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sectionsScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:id="@+id/sectionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"/>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
