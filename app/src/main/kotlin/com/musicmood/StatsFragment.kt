@@ -39,7 +39,7 @@ class StatsFragment : Fragment() {
         addRow("Analizzati", "${analyzed.size}")
         addRow("Durata totale", formatTotal(analyzed.sumOf { it.duration.toDouble() }))
 
-        val moodCounts = analyzed.groupBy { it.mood }.mapValues { it.value.size }
+        val moodCounts = analyzed.groupBy { it.effectiveMood }.mapValues { it.value.size }
             .toList().sortedByDescending { it.second }
         if (moodCounts.isNotEmpty()) {
             addHeader("🎭 Mood")
@@ -82,7 +82,8 @@ class StatsFragment : Fragment() {
 
         addHeader("⚡ Top 5 Energia")
         analyzed.sortedByDescending { it.energy }.take(5).forEachIndexed { i, s ->
-            addRow("${i+1}. ${s.title.take(28)}", "${s.mood}  ·  ${s.tempo.toInt()} BPM")
+            val artist = if (s.artist.isNotBlank()) " · ${s.artist.take(16)}" else ""
+            addRow("${i+1}. ${s.title.take(24)}$artist", "${s.effectiveMood}  ·  ${s.tempo.toInt()} BPM")
         }
     }
 
