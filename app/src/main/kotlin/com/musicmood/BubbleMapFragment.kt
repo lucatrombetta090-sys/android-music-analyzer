@@ -46,6 +46,7 @@ class BubbleMapFragment : Fragment() {
                 setTextColor(resources.getColorStateList(R.color.chip_text_selector, null))
                 setOnClickListener {
                     bubbleView.activeMood = mood
+                    bubbleView.resetZoom()
                     refreshInfo(mood)
                 }
             })
