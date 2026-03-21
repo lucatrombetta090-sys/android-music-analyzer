@@ -52,15 +52,15 @@ class BubbleMapView @JvmOverloads constructor(
 
     // ── Cluster positions (fraction of canvas w/h) ───────────────────────────
     private val ZONES = mapOf(
-        "Energico"       to Pair(0.75f, 0.20f),
-        "Positivo"       to Pair(0.30f, 0.22f),
-        "Aggressivo"     to Pair(0.85f, 0.65f),
-        "Malinconico"    to Pair(0.18f, 0.72f),
-        "Romantico"      to Pair(0.55f, 0.78f),
-        "Rilassato"      to Pair(0.20f, 0.42f),
-        "Nostalgico"     to Pair(0.47f, 0.55f),
-        "Concentrazione" to Pair(0.70f, 0.43f),
-        "Festivo"        to Pair(0.50f, 0.14f)
+        "Festivo"        to Pair(0.50f, 0.12f),   // top center
+        "Energico"       to Pair(0.80f, 0.22f),   // top right
+        "Positivo"       to Pair(0.22f, 0.22f),   // top left
+        "Rilassato"      to Pair(0.15f, 0.48f),   // mid left
+        "Concentrazione" to Pair(0.78f, 0.48f),   // mid right
+        "Nostalgico"     to Pair(0.50f, 0.50f),   // center
+        "Malinconico"    to Pair(0.18f, 0.78f),   // bottom left
+        "Romantico"      to Pair(0.52f, 0.82f),   // bottom center
+        "Aggressivo"     to Pair(0.84f, 0.75f)    // bottom right
     )
 
     // ── Viewport ──────────────────────────────────────────────────────────────
@@ -105,7 +105,7 @@ class BubbleMapView @JvmOverloads constructor(
             val pos    = ZONES[mood] ?: Pair(0.5f, 0.5f)
             val cx     = pos.first * w
             val cy     = pos.second * h
-            val spread = minOf(w, h) * 0.12f
+            val spread = minOf(w, h) * 0.10f
             val color  = SongAdapter.MOOD_COLORS[mood] ?: 0xFF1DB954.toInt()
             val dim    = (color and 0x00FFFFFF) or 0xBB000000.toInt()
 
